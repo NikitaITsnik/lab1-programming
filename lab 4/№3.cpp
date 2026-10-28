@@ -2,7 +2,7 @@
 int main(){
     setlocale(LC_ALL,".UTF8");
     int(age);
-    std::cout<<"Введите возраст";
+    std::cout<<"Введите возраст ";
     std::cin >>age;
     if (age <0){
         std::cout<<"Некорректный возраст";
