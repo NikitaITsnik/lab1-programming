@@ -1,16 +1,54 @@
 #include <iostream>
-#include <string>
-int main()
-{
+#include <iomanip>
+using namespace std;
+int main() {
+    setlocale(LC_ALL,".UTF8");
+    cout << "Конвертер валют\n";
+    cout << "1. Перевод USD в RUB\n";
+    cout << "2. Перевод EUR в RUB\n";
+    cout << "3. Перевод RUB в USD\n";
+    cout << "4. Перевод RUB в EUR\n";
+int choice;
+cout << "Ваш выбор (1-4): ";
+cin >> choice;
 
-    setlocale(LC_ALL, ".UTF8");
-    int a,b;
-    std::cout << "ввеите переменную a: ";
-    std::cin >> a;
+cout << fixed << setprecision(2);
 
-    std::cout << "введите переменную b: ";
-    std::cin >> b;
+if (choice == 1) {
+    double usd;
+    cout << "Введите сумму в USD: ";
+    cin >> usd;
 
-    std::cout << "переменная a = " << a << ", переменная b = " << b;
-    return 0;
+    double rub = usd * 92.5;
+    cout << usd << " USD = " << rub << " RUB\n";
+
+} else if (choice == 2) {
+    double eur;
+    cout << "Введите сумму в EUR: ";
+    cin >> eur;
+
+    double rub = eur * 100.0;
+    cout << eur << " EUR = " << rub << " RUB\n";
+
+} else if (choice == 3) {
+    double rub;
+    cout << "Введите сумму в RUB: ";
+    cin >> rub;
+
+    double usd = rub / 92.5;
+    cout << rub << " RUB = " << usd << " USD\n";
+
+} else if (choice == 4) {
+    double rub;
+    cout << "Введите сумму в RUB: ";
+    cin >> rub;
+
+    double eur = rub / 100.0;
+    cout << rub << " RUB = " << eur << " EUR\n";
+
+} else {
+    cout << "Некорректный выбор\n";
+}
+
+return 0;
 }

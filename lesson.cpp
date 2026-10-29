@@ -1,60 +1,33 @@
-// #include <iostream>
-// #include <cmath>
-// #include <iomanip>
-
-// using namespace std;
-
-// int main() {
-//     setlocale(LC_ALL, ".UTF8");
-
-//     float rost, ves;
-
-//     cout << "Введите рост (метры): ";
-//     cin >> rost;
-
-//     if (rost <= 0 || rost > 3) {
-//         cout << "Неправильные данные";
-//         return 0;
-//     }
-
-//     cout << "Введите вес (килограммы): ";
-//     cin >> ves;
-
-//     if (ves <= 0 || ves > 1000) {
-//         cout << "Неправильные данные";
-//         return 0;
-//     }
-
-//     cout << fixed << setprecision(1)
-//          << "ИМТ: " << ves / pow(rost, 2) << endl;
-
-//     return 0;
-// }
-
 #include <iostream>
-#include <iomanip>
+#include <cmath>     // Необходимо для std::pow
+#include <iomanip>   // Необходимо для настройки вывода больших чисел
 
 int main() {
-    setlocale(LC_ALL,".UTF8");
-    int choice;
-    double temp, result;
+    setlocale(LC_ALL, ".UTF8");
 
-    std::cout << "1. C в F, 2. F в C: ";
-    std::cin >> choice;
-    std::cout << "Введите температуру: ";
-    std::cin >> temp;
+    //ввод числа
+    int a, b;
+    std::cout << "введи число a: ";
+    std::cin >> a;
+    std::cout << "введи число b: ";
+    std::cin >> b;
 
-    if (choice == 1) {
-        result = temp * 9 / 5 + 32;
-        std::cout << std::fixed << std::setprecision(2)
-                  << result << " F\n";
-    } else if (choice == 2) {
-        result = (temp - 32) * 5 / 9;
-        std::cout << std::fixed << std::setprecision(2)
-                  << result << " C\n";
+    //вывод операций с числами
+    std::cout << "Сумма: " << a + b << '\n';
+    std::cout << "Разность: " << a - b << '\n';
+    std::cout << "Произведение: " << a * b << '\n';
+    
+    //проверка что делители не равный 0
+    if (b != 0) {
+        std::cout << "Деление: " << a / b << '\n';
+        std::cout << "Остаток: " << a % b << '\n';
     } else {
-        std::cout << "Неверный выбор\n";
+        std::cout << "Деление: На ноль делить нельзя!\n";
+        std::cout << "Остаток: На ноль делить нельзя!\n";
     }
+
+    // Отключаем экспоненциальный формат (e+06) для красивого вывода степени
+    std::cout << "Степень: " << std::fixed << std::setprecision(0) << std::pow(a, b) << '\n';
 
     return 0;
 }
