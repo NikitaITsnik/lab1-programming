@@ -1,6 +1,6 @@
 #include <iostream>
 #include <string>
-using namespace std; // Примечание: в коде на скрине опечатка "namespace namespace std;"
+using namespace std;
 
 string toBase(int n, int base) {
     setlocale(LC_ALL,".UTF8");
