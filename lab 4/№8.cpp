@@ -1,9 +1,12 @@
 #include <iostream>
 int main (){
+    //коректная работа с русским текстом
     setlocale(LC_ALL,".UTF8");
     int a;
+    //ввод номер месяца
     std::cout<<"Введите номер месяца \n";
     std::cin>>a;
+    //проверка сезона
     if ((a>=1 && a<=2) || (a==12)) {
         std::cout<<"Сезон - Зима";
     } else if (3<=a && a<=5){
